@@ -565,9 +565,9 @@ opcache.fast_shutdown = 1
     "file_denylist": [],
     "startup": "bash /home/container/startup.sh",
     "config": {
-        "files": "{\\n  \\\"nginx/default.conf\\\": {\\n    \\\"parser\\\": \\\"file\\\",\\n    \\\"update\\\": true\\n  }\\n}",
-        "startup": "{\\n  \\\"done\\\": \\\"ArixByte Web Hosting is fully online and serving traffic!\\\"\\n}",
-        "logs": "{\\n  \\\"custom\\\": true,\\n  \\\"location\\\": \\\"logs/nginx-error.log\\\"\\n}",
+        "files": "{\\\"nginx/default.conf\\\":{\\\"parser\\\":\\\"file\\\",\\\"update\\\":true}}",
+        "startup": "{\\\"done\\\":\\\"ArixByte Web Hosting is fully online and serving traffic!\\\"}",
+        "logs": "{\\\"custom\\\":true,\\\"location\\\":\\\"logs/nginx-error.log\\\"}",
         "stop": "^C"
     },
     "scripts": {
