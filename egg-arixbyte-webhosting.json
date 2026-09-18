@@ -1,94 +1,101 @@
 {
-  "name": "ArixByte Web Hosting",
-  "description": "Production-ready web hosting egg for ArixByte supporting Static HTML, PHP, Laravel, and Node.js applications.",
-  "features": [
-    "php:8.4",
-    "nginx",
-    "nodejs",
-    "composer",
-    "git"
-  ],
-  "images": [
-    "ghcr.io/arixbyte/web-hosting:latest"
-  ],
-  "file_denylist": [],
-  "startup": "bash /home/container/startup.sh",
-  "config": {
-    "files": "{\n  \"nginx/default.conf\": {\n    \"parser\": \"file\",\n    \"update\": true\n  }\n}",
-    "startup": "{\n  \"done\": \"ArixByte Web Hosting is fully online and serving traffic!\"\n}",
-    "logs": "{\n  \"custom\": true,\n  \"location\": \"logs/nginx-error.log\"\n}",
-    "stop": "^C"
-  },
-  "scripts": {
-    "installation": {
-      "script": "#!/bin/bash\napt-get update && apt-get install -y curl git unzip\necho 'ArixByte Web Hosting container base prepared successfully.'",
-      "container": "ubuntu:24.04",
-      "entrypoint": "bash"
-    }
-  },
-  "variables": [
-    {
-      "name": "Application Type",
-      "description": "Automatic detection or forced runtime (auto, static, php, laravel, node)",
-      "env_variable": "APP_TYPE",
-      "default_value": "auto",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "required|string|in:auto,static,php,laravel,node"
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL",
+    "meta": {
+        "version": "PTDL_v1",
+        "update_url": null
     },
-    {
-      "name": "Startup Command",
-      "description": "Custom startup command for Node.js or custom web apps (e.g. npm start)",
-      "env_variable": "STARTUP_CMD",
-      "default_value": "",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "nullable|string"
+    "exported_at": "2026-03-30T00:00:00+00:00",
+    "name": "ArixByte Web Hosting",
+    "author": "support@arixbyte.com",
+    "description": "Production-ready web hosting egg for ArixByte supporting Static HTML, PHP, Laravel, and Node.js applications.",
+    "features": [
+        "php:8.4",
+        "nginx",
+        "nodejs",
+        "composer",
+        "git"
+    ],
+    "images": [
+        "ghcr.io/arixbyte/web-hosting:latest"
+    ],
+    "file_denylist": [],
+    "startup": "bash /home/container/startup.sh",
+    "config": {
+        "files": "{\n  \"nginx/default.conf\": {\n    \"parser\": \"file\",\n    \"update\": true\n  }\n}",
+        "startup": "{\n  \"done\": \"ArixByte Web Hosting is fully online and serving traffic!\"\n}",
+        "logs": "{\n  \"custom\": true,\n  \"location\": \"logs/nginx-error.log\"\n}",
+        "stop": "^C"
     },
-    {
-      "name": "PHP Version",
-      "description": "PHP version used by the container",
-      "env_variable": "PHP_VERSION",
-      "default_value": "8.4",
-      "user_viewable": true,
-      "user_editable": false,
-      "rules": "required|string"
+    "scripts": {
+        "installation": {
+            "script": "#!/bin/bash\napt-get update && apt-get install -y curl git unzip\necho 'ArixByte Web Hosting container base prepared successfully.'",
+            "container": "ubuntu:24.04",
+            "entrypoint": "bash"
+        }
     },
-    {
-      "name": "Document Root",
-      "description": "Public web document root directory relative to container",
-      "env_variable": "DOCUMENT_ROOT",
-      "default_value": "/home/container/public",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "required|string"
-    },
-    {
-      "name": "Run Composer Install",
-      "description": "Automatically run composer install on startup if composer.json exists",
-      "env_variable": "RUN_COMPOSER_INSTALL",
-      "default_value": "false",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "required|boolean"
-    },
-    {
-      "name": "Run NPM Install",
-      "description": "Automatically run npm install on startup if package.json exists",
-      "env_variable": "RUN_NPM_INSTALL",
-      "default_value": "false",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "required|boolean"
-    },
-    {
-      "name": "Run NPM Build",
-      "description": "Automatically run npm run build on startup if build script exists",
-      "env_variable": "RUN_NPM_BUILD",
-      "default_value": "false",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "required|boolean"
-    }
-  ]
+    "variables": [
+        {
+            "name": "Application Type",
+            "description": "Automatic detection or forced runtime (auto, static, php, laravel, node)",
+            "env_variable": "APP_TYPE",
+            "default_value": "auto",
+            "user_viewable": "1",
+            "user_editable": "1",
+            "rules": "required|string|in:auto,static,php,laravel,node"
+        },
+        {
+            "name": "Startup Command",
+            "description": "Custom startup command for Node.js or custom web apps (e.g. npm start)",
+            "env_variable": "STARTUP_CMD",
+            "default_value": "",
+            "user_viewable": "1",
+            "user_editable": "1",
+            "rules": "nullable|string"
+        },
+        {
+            "name": "PHP Version",
+            "description": "PHP version used by the container",
+            "env_variable": "PHP_VERSION",
+            "default_value": "8.4",
+            "user_viewable": "1",
+            "user_editable": "0",
+            "rules": "required|string"
+        },
+        {
+            "name": "Document Root",
+            "description": "Public web document root directory relative to container",
+            "env_variable": "DOCUMENT_ROOT",
+            "default_value": "/home/container/public",
+            "user_viewable": "1",
+            "user_editable": "1",
+            "rules": "required|string"
+        },
+        {
+            "name": "Run Composer Install",
+            "description": "Automatically run composer install on startup if composer.json exists",
+            "env_variable": "RUN_COMPOSER_INSTALL",
+            "default_value": "false",
+            "user_viewable": "1",
+            "user_editable": "1",
+            "rules": "required|string|in:true,false"
+        },
+        {
+            "name": "Run NPM Install",
+            "description": "Automatically run npm install on startup if package.json exists",
+            "env_variable": "RUN_NPM_INSTALL",
+            "default_value": "false",
+            "user_viewable": "1",
+            "user_editable": "1",
+            "rules": "required|string|in:true,false"
+        },
+        {
+            "name": "Run NPM Build",
+            "description": "Automatically run npm run build on startup if build script exists",
+            "env_variable": "RUN_NPM_BUILD",
+            "default_value": "false",
+            "user_viewable": "1",
+            "user_editable": "1",
+            "rules": "required|string|in:true,false"
+        }
+    ]
 }
