@@ -1,0 +1,6 @@
+{
+  "name": "ArixByte Pterodactyl Web Hosting Egg",
+  "description": "Production-ready custom Pterodactyl web hosting egg, Docker image, startup script, and management dashboard for ArixByte.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
